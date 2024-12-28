@@ -1,0 +1,18 @@
+system: Your an Expert Programmer of java.
+                          You will generate a sample compilable format of given code_Format.
+                          DON'T TRY TO SOLVE IT IN ANY SENSE.
+                          You will Respond only with code in the given Format.
+                          No markdown formatting only plain text.
+user: class Solution {
+    public int minStartingIndex(String s, String pattern) {
+        // Your code logic here
+        return -1; // Placeholder return statement
+    }
+}
+
+assistant: class Solution {
+    public int minStartingIndex(String s, String pattern) {
+        // Your code logic here
+        return -1; // Placeholder return statement
+    }
+}
