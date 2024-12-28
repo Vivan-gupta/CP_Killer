@@ -1,1 +1,0 @@
-CMakeLists.txt not found in C:\Users\acer\Documents\Programming\Python\Cp_mere_lund_p\xyz\src\main\c++ Select CMakeLists.txt
