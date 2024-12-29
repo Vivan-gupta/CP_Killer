@@ -28,9 +28,13 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acf334db-3b1e-4b2e-a919-caad913cdacb" name="Changes" comment="c4">
-      <change afterPath="$PROJECT_DIR$/../Information.py" afterDir="false" />
+    <list default="true" id="acf334db-3b1e-4b2e-a919-caad913cdacb" name="Changes" comment="c5">
+      <change afterPath="$PROJECT_DIR$/Solution.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/editor.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Information.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Information.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +88,11 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -94,7 +103,7 @@
       <option name="presentableId" value="Default" />
       <updated>1735357906945</updated>
       <workItem from="1735357909051" duration="804000" />
-      <workItem from="1735445391812" duration="2000" />
+      <workItem from="1735445391812" duration="1254000" />
     </task>
     <task id="LOCAL-00001" summary="c4">
       <option name="closed" value="true" />
@@ -104,7 +113,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735357941353</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="c5">
+      <option name="closed" value="true" />
+      <created>1735445409036</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1735445409036</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -112,13 +129,14 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="c4" />
-    <option name="LAST_COMMIT_MESSAGE" value="c4" />
+    <MESSAGE value="c5" />
+    <option name="LAST_COMMIT_MESSAGE" value="c5" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/main.cpp</url>
+          <url>file://$PROJECT_DIR$/Main.cpp</url>
           <line>15</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
