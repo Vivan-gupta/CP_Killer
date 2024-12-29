@@ -17,7 +17,7 @@ with open("Question.txt", "r") as file:
     Question = file.read()
 with open("src/main/java/Solution"+extensions[language], "r") as file:
     code_Format = file.read()
-with open(language + "_Test_Format" + extensions[language], "r") as file:
+with open(language + "_Test_Format", "r") as file:
     test_Format = file.read()
 
 #Sample Code Generation

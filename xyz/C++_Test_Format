@@ -127,7 +127,7 @@ public class SolutionTest
       }
       String message = "Input: " + input/s_of_testcase2 +
                        "\nExpected Output: " + Output/s_of_testcase2 +
-                       "\nOutput: " + output";
+                       "\nOutput: " + output;
       return new Object[]{RE_found, isPass, message};
   }
       .
