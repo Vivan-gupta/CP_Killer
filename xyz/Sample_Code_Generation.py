@@ -2,20 +2,27 @@ from openai import OpenAI
 import subprocess
 
 from Output_Formatting import filter_out_code
+from Information import info
 
 client = OpenAI()
 
 execution_bool = False
 test_try = 0
 
+platforms = ['LeetCode', 'CodeForces', 'CodeChef', 'GeeksForGeeks', 'AtCoder']
 languages=['python', 'java', 'c++']
-language = languages[1]
-extensions={'java':'.java', 'python':'.py', 'c++':'.cpp'}
 
-with open("src/main/java/Solution"+extensions[language], "r") as file:
+
+platform = platforms[0]
+language=languages[1]
+
+extension, file_name = info(platform,language)
+file_location = file_name+extension
+
+with open(file_location, "r") as file:
     code_Format = file.read()
 
-def sample_code(language, extension, code_Format):
+def sample_code(language, code_Format):
 
     global execution_bool
     global test_try
@@ -44,7 +51,7 @@ def sample_code(language, extension, code_Format):
 
         sample_Code, found_Code = filter_out_code(response0.choices[0].message.content)
 
-        with open("src/main/java/Solution" + extension, "w") as file:
+        with open(file_location, "w") as file:
             file.write(sample_Code)
 
         messages.append({"role": "assistant", "content": sample_Code})
@@ -58,9 +65,9 @@ def sample_code(language, extension, code_Format):
         else:
 
             try:
-                subprocess.run(["javac", r"src/main/java/Solution.java"], check=True, capture_output=True, text=True)
+                subprocess.run(["javac", file_location], check=True, capture_output=True, text=True)
                 execution_bool = True
-
+                
             except subprocess.CalledProcessError as e:
                 execution_msg = e.stderr
                 execution_bool = False
@@ -73,4 +80,4 @@ def sample_code(language, extension, code_Format):
         test_try += 1
 
 if __name__ == '__main__':
-    sample_code(language, extensions[language], code_Format)
+    sample_code(language, code_Format)

@@ -1,8 +1,6 @@
-import java.sql.SQLOutput;
-
-public class Solution
-{
-    public static void main(String[] args) {
-        System.out.println("Hello World");
+class Solution {
+    public int minimizeXor(int num1, int num2) {
+        // Implement your logic here
+        return 0; // placeholder return statement
     }
 }

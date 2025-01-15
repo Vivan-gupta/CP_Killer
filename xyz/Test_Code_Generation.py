@@ -3,29 +3,37 @@ import subprocess
 
 from Output_Formatting import filter_out_code
 from Sample_Code_Generation import sample_code
+from Information import info
 
 client = OpenAI()
 
 execution_bool = False
 test_try = 0
 
+platforms = ['LeetCode', 'CodeForces', 'CodeChef', 'GeeksForGeeks', 'AtCoder']
 languages=['python', 'java', 'c++']
-language = languages[1]
-extensions={'java':'.java', 'python':'.py', 'c++':'.cpp'}
+
+platform = platforms[0]
+language=langauges[0]
+
+extension, file_name = info(platform,language)
+file_location = file_name+extension
+
+test_location = file_name+"Test"+extension
 
 with open("Question.txt", "r") as file:
     Question = file.read()
-with open("src/main/java/Solution"+extensions[language], "r") as file:
+with open(file_location, "r") as file:
     code_Format = file.read()
 with open(language + "_Test_Format", "r") as file:
     test_Format = file.read()
 
 #Sample Code Generation
-sample_code(language, extensions[language],code_Format)
-with open("src/main/java/Solution"+extensions[language], "r") as file:
+sample_code(language, extension, code_Format)
+with open(file_location, "r") as file:
     sample_Code = file.read()
 
-def test_code(language, extension, Question, sample_Code, test_Format):
+def test_code(language, Question, sample_Code, test_Format):
 
     global execution_bool
     global test_try
@@ -66,7 +74,7 @@ def test_code(language, extension, Question, sample_Code, test_Format):
 
         Testing_Code, found_Code = filter_out_code(response.choices[0].message.content)
 
-        with open("src/main/java/SolutionTest" + extension, "w") as file:
+        with open(test_location, "w") as file:
             file.write(Testing_Code)
 
         messages.append({"role": "assistant", "content": Testing_Code})
@@ -80,7 +88,7 @@ def test_code(language, extension, Question, sample_Code, test_Format):
         else:
 
             try:
-                subprocess.run(["javac", r"src/main/java/Solution.java", r"src/main/java/SolutionTest.java"], check=True, capture_output=True, text=True)
+                subprocess.run(["javac", file_location, test_location], check=True, capture_output=True, text=True)
                 execution_bool = True
             except subprocess.CalledProcessError as e:
                 execution_msg = e.stderr
@@ -94,4 +102,4 @@ def test_code(language, extension, Question, sample_Code, test_Format):
         test_try += 1
 
 if __name__ == '__main__':
-    test_code(language, extensions[language], Question, sample_Code, test_Format)
+    test_code(language, Question, sample_Code, test_Format)

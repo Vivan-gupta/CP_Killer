@@ -24,3 +24,11 @@ file_location = {
                         'AtCoder': 'C++/Main'
                        },
                 }
+
+def info(platform, language):
+    global platforms
+    global languages
+    global extensions
+    global file_location
+    return extensions[language],file_location[language][platform]
+    
