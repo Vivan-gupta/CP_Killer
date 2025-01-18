@@ -29,6 +29,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="acf334db-3b1e-4b2e-a919-caad913cdacb" name="Changes" comment="c5">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Executioner.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Executioner.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Test_Code_Generation.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Test_Code_Generation.py" afterDir="false" />
@@ -97,7 +98,7 @@
       <workItem from="1735357909051" duration="804000" />
       <workItem from="1735445391812" duration="2442000" />
       <workItem from="1735611785926" duration="22000" />
-      <workItem from="1737216488803" duration="1000" />
+      <workItem from="1737216488803" duration="705000" />
     </task>
     <task id="LOCAL-00001" summary="c4">
       <option name="closed" value="true" />
