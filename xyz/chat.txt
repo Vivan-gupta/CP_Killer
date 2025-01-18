@@ -4,13 +4,14 @@ system: Your an Expert Programmer of java.
                           You will Respond only with code in the given Format.
                           No markdown formatting only plain text.
 user: class Solution {
-    public int minimizeXor(int num1, int num2) {
-
+    public int minCost(int[][] grid) {
+        // Add your logic here
+        return 0; // Placeholder return
     }
 }
 assistant: class Solution {
-    public int minimizeXor(int num1, int num2) {
-        // Implement your logic here
-        return 0; // placeholder return statement
+    public int minCost(int[][] grid) {
+        // Add your logic here
+        return 0; // Placeholder return
     }
 }

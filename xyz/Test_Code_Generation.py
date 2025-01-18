@@ -14,12 +14,14 @@ platforms = ['LeetCode', 'CodeForces', 'CodeChef', 'GeeksForGeeks', 'AtCoder']
 languages=['python', 'java', 'c++']
 
 platform = platforms[0]
-language=langauges[0]
+language=languages[1]
 
 extension, file_name = info(platform,language)
 file_location = file_name+extension
 
 test_location = file_name+"Test"+extension
+
+# print(test_location)
 
 with open("Question.txt", "r") as file:
     Question = file.read()
@@ -29,7 +31,7 @@ with open(language + "_Test_Format", "r") as file:
     test_Format = file.read()
 
 #Sample Code Generation
-sample_code(language, extension, code_Format)
+sample_code(language, code_Format)
 with open(file_location, "r") as file:
     sample_Code = file.read()
 
@@ -85,8 +87,8 @@ def test_code(language, Question, sample_Code, test_Format):
                                                            No Markdown formatting.
                                                            Respond in Plain Text only."""})
             execution_bool = False
-        else:
 
+        else:
             try:
                 subprocess.run(["javac", file_location, test_location], check=True, capture_output=True, text=True)
                 execution_bool = True

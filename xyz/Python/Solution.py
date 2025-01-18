@@ -1,17 +1,39 @@
-class Solution(object):
-    def minimizeXor(self, num1, num2):
-        a, b = bin(num1).count('1'), bin(num2).count('1')
-        res = num1
-        for i in range(32):
-            if a > b and (1 << i) & num1 > 0:
-                res ^= 1 << i
-                a -= 1
-            if a < b and (1 << i) & num1 == 0:
-                res ^= 1 << i
-                a += 1
-        return res
+from collections import deque
 
-if __name__ == "__main__":
-    solution = Solution()
-    result = solution.minimizeXor(3, 5)
-    print(result)
+
+class Solution(object):
+    def minCost(self, grid):
+        """
+        :type grid: List[List[int]]
+        :rtype: int
+        """
+        m, n = len(grid), len(grid[0])
+        # Initialize the minCost matrix with a large value
+        minCost = [[float('inf')] * n for _ in range(m)]
+        minCost[0][0] = 0
+
+        # Deque for 0-1 BFS
+        dque = deque([(0, 0)])
+
+        # Directions: right, left, down, up
+        directions = [(0, 1), (0, -1), (1, 0), (-1, 0)]
+
+        while dque:
+            r, c = dque.popleft()
+
+            # Visit adjacent cells
+            for i, (dr, dc) in enumerate(directions):
+                nr, nc = r + dr, c + dc
+                cost = 1 if grid[r][c] != i + 1 else 0
+
+                if 0 <= nr < m and 0 <= nc < n and minCost[r][c] + cost < minCost[nr][nc]:
+                    minCost[nr][nc] = minCost[r][c] + cost
+
+                    # Add to deque based on cost
+                    if cost == 1:
+                        dque.append((nr, nc))
+                    else:
+                        dque.appendleft((nr, nc))
+
+        # Return the minimum cost to reach the bottom-right corner
+        return minCost[m - 1][n - 1]

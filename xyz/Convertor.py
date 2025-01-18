@@ -16,14 +16,14 @@ languages=['python', 'java', 'c++']
 
 platform = platforms[0]
 
-from_language=langauges[0]
-to_language=langauges[1]
+from_language = languages[0]
+to_language = languages[1]
 
 from_file_extension, from_file_name = info(platform,from_language)
 to_file_extension, to_file_name = info(platform,to_language)
 
-from_file_location=from_file_name+from_file_extension
-to_file_location=to_file_name+to_file_extension
+from_file_location = from_file_name + from_file_extension
+to_file_location = to_file_name + to_file_extension
 
 with open(from_file_location, "r") as file:
     from_Code = file.read()
@@ -34,12 +34,12 @@ with open("Question.txt", "r") as file:
 with open(to_language + "_Test_Format" + to_file_extension, "r") as file:
     test_Format = file.read()
 
-sample_code(languages[1], extensions[languages[1]], to_Code_Format)
+# sample_code(to_language, to_Code_Format)
 
 with open(to_file_location, "r") as file:
     to_Code_Format = file.read()
 
-# test_code(languages[1], extensions[languages[1]], Question, to_Code_Format, test_Format)
+# test_code(to_language, to_file_extension, Question, to_Code_Format, test_Format)
 
 messages = [
     {
